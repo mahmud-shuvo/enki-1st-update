@@ -1,0 +1,116 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="inner.css" type="text/css";>
+</head>
+<body>
+<div id="wrapper">
+	<div id="logomenu">
+    	<div class="logo">
+        	<img class="logoimage" src="images/logo.png"/>
+        </div>
+        <div class="clear"></div>
+        <div class="menu">
+            <div id="menu">
+                <h2>About</h2>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="usermanual.html">User manual</a></li>
+                    <li><a href="http://groups.google.com/group/mksv3">Support group</a></li>
+                    <li><a href="ircroom.html">IRC room</a></li>
+                </ul>
+                <h2>Bugs</h2>
+                <ul>
+                    <li><a href="fork">Fork and fix</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/issues">Fill issue</a></li>
+                    <li><a href="mailto:mksv3-bugs@googlegroups.com">Email issue</a></li>
+                </ul>
+                
+                <h2>Hacking</h2>
+                <ul>
+                    <li><a href="https://github.com/hlamer/mksv3">GitHub</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/wiki/Plugins-tutorial">Plugin Tutorial</a></li>
+                    <li><a href="http://mksv3.rtfd.org">Plugin API</a></li>
+                </ul>
+                
+                <a href="https://sourceforge.net/donate/index.php?group_id=163493" target="_blank"> <img src="https://images-ssl.sourceforge.net/images/project-support.jpg"/></a>
+                <br/>
+                <br/>            
+            </div>        
+        </div>
+    </div>
+    <div id="headercontent">
+    	<div class="header">
+        	<div class="enki">
+            	<div class="enkilogo">
+            </div>
+            <div class="clear"> </div>
+            <div class="editor">
+            	<div class="freespace">
+                	<h3>Install from sources</h3>
+                </div>
+            	<div class="slogo">
+                    <h2>editor</h2><br/>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="content">
+        	<div class="innercontent">
+    		<h2>Locator</h2>
+				<p>I just finished functionality, which I was missing for many years.Could you please stop reading this text for few seconds and think, why all this hardcore linuxoids (like me, and probably you;) ) love console and do not want to use GUI software.I guess I know one of the 2 popular answers:</p>
+                <ul>
+                	<li><span>It always quicker to type a command than click buttons and dialogs or remember a lot of complex shortcuts.</span></li>
+                    <li><span>powerful Tab completion makes typing commands even more effective. With it you can navigate in file system really quickly. Much quicker, than with GUI.</span></li>
+                </ul>
+            <h3>Tab completion</h3>
+            <p>You type part of the word, press Tab - and your shell completes the word. This behaviour is similar to standard File open dialog, which you usually see, when press Ctrl+O But, what is wrong with GUI dialogs and completers such as QCompleter - if you have more than one variant, you need more time to select desired one.</p>
+            <p>Let's imagine you have files:</p>
+            <ul>
+            	<li><span>long-the-same-path-1.txt</span></li>
+                <li><span>long-the-same-path-2.txt</span></li>
+                <li><span>long-the-same-path-3.txt</span></li>
+                <li><span>long-the-same-path-4.txt</span></li>
+                <li><span>Xong-the-same-path-5.txt</span></li>
+            </ul>
+            <p>and want to open <h4>long-the-same-path-4.txt</h4></p>
+            <p>With GUI file dialog you would:</p>
+            <ul>
+            	<li><span>Press1</span></li>
+                <li><span>Either</span></li>
+            </ul>
+            <ul>
+            	<li><span>click a variant with mouse</span></li>
+                <li><span>move you fingers to Up/Down keys and select</span></li>
+                <li><span>press Tab 3 times for selecting long-the-same-path-4.txt</span></li>
+            </ul>
+            <p>Console shell completer:</p>
+            <ul>
+            	<li><span>Type l</span></li>
+            </ul>
+            <p>No mouse, no moving fingers to Up/Down, only 4 key pressing. Console allows you to open file much quicker! Tab completion was invented many years ago. I really can't understand why it is not widelly used on GUI.</p>
+            <p>GUI sucks, but I decided to fix this situaition in enki. I just added Locator dialog (Ctrl+L). It has:</p>
+            <ul>
+            	<li><span>Interface for textual commands</span></li>
+                <li><span>Tab completion for path</span></li>
+            </ul>
+            <p>Now you can open files incredible quickly. It is even better, than Bash</p>
+            <p>Currently Locator supports 3 commands:</p>
+            <ul>
+            	<li><span>Open file</span></li>
+                <li><span>Save file as</span></li>
+                <li><span>Go to line number</span></li>
+            </ul>
+            <p>but I added API for it, and plugins can add own commands. So, Locator functionality will grow.</p>
+            
+                <img class="innercontentimg1" src="images/locator.png"/>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

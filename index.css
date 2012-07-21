@@ -1,0 +1,62 @@
+/* CSS Document */
+body {margin:0; padding: 0; font: 14px sans-serif;}
+#wrapper {width: 1000px;height: auto;margin: 0 auto;}
+h4  { font: 10px sans-serif; text-align:right; color:#fff; padding-right: 10px;}
+#header {widht: 100%;}
+.logo {background:url(images/logotopbf.png) no-repeat right top  ; width: 178px; height:232px;}
+.logoimage { margin: 10px 0 0 -10px;}
+.rightlogo {width: 822px; height: auto;}
+.logo, .rightlogo { float:left; display: inline-block;}
+.enki {height: 104px; background:url(images/enkibackground.png) repeat-x; width: 100%;}
+.enkilogo { float:right; height:103px; width: 160px; background:url(images/enkibg.png); margin:0 ; padding: 0;}
+.editor { width: 100%;}
+.editorUL { width: 142px; height: auto;}
+.editorcontent { width: ;}
+.slogo { width: 195px; text-align: right;}
+.twitter { margin:10px 15px 0 0;}
+.fb {margin: 10px 10px 0 0 ;}
+.editor h2 {font: bold 25px arial; letter-spacing: 16; color: #2E4869; margin: 0 -16px 0 0; padding: 0;}
+.editorUL, .editorcontent, .slogo { float: left;}
+.editorUL ul { margin: 5px 0 0 30px; padding: 0; }
+.editorUL ul li { color: #2E4869; list-style-image:url(images/li_circle.png); line-height: 18px;}
+.editorcontent ul { margin: 5px 0 0 30px; padding: 0; list-style: none;}
+.editorcontent ul li { color: #2E4869; line-height: 18px;}
+#contentbody { width: 100%; height: auto;}
+#menu { height: 300px; width: 178px; }
+#menu h2 { font: bold 18px sans-serif; color: #2E4869; margin:0; padding: 0;}
+#content { background: #2E4869; height:auto; width: 820px; padding-top: 50px; position: relative; left: -11px; }
+#menu, #content { float: left;}
+.clear { clear: both;}
+#menu ul { margin: 5px 0 7px 15px; padding: 0; color:#F25A29 !important;}
+#menu ul li { color: #2E4869; list-style-image:url(images/li_circle.png); font: 16px sans-serif;}
+#menu ul li a { color: #2E4869; text-decoration: none; font: 16px sans-serif;}
+#menu ul li a:hover { text-decoration: underline;}
+.contentmenu { width: 350px; height: auto;}
+.menuli { width: 100%; height: auto;}
+.livepreview { width: 465px; height: auto;}
+.contentmenu, .livepreview { float:left; display: inline-block;}
+.contentmenu ul { margin: 0 5px 0 20px; padding: 0;  }
+.contentmenu ul li { list-style: none; margin-top: 14px; width: 313px;}
+.contentmenu ul li a { text-decoration: none; background:url(images/menubg.png) repeat-x; 
+border-radius: 8px;background-position: right;padding-right: 32px;padding-left: 23px;display: block;line-height: 30px;text-decoration: none;font-family: Georgia, "Times New Roman", Times, serif;font-size: 21px;color: #fff;box-shadow:  0px -2px 5px 1px #000;-webkit-box-shadow:  0px -2px 5px 1px #000; }
+.contentmenu ul li a:hover { background:url(images/menubghober.png) repeat-x;  display: block; box-shadow:  0px -2px 5px 1px #000;
+-webkit-box-shadow:  0px -2px 5px 1px #FFF;}
+.menuimg {padding-right: 50px; vertical-align: middle; }
+.newsupdates { background: url(images/newsbd.png) no-repeat; width:330px; height: 155px; margin: 5px 0 0 15px; color: #fff;}
+.newsupdates a { margin: 0 0 5px 5px; font: 12px arial; color: #fff; text-decoration: none;}
+.newsupdates a:hover { text-decoration: underline;}
+.newsupdates h3 { padding: 18px 0 0 14px; color: #fff; font: bold 18px tahoma; margin: 0; }
+.newsupdates p { margin: 0 0 5px 5px; font: 12px arial;}
+.date { width:30%; height:auto;  margin: 5px 0 0 5px; padding: 5px 0 0 5px;} 
+.news {width:62%; height:auto;  margin: 5px 0 0 5px; padding: 5px 0 0 5px;}
+.date, .news {float: left;}
+.minimalstic { margin: 0 10px 10px 5px;}
+.search {}
+.goodbye {  margin: 0 10px 10px 5px;}
+.markdown {}
+.minimalstic, .search { float: left; width: 220px;  margin-top:25px;}
+.goodbye, .markdown { float: left; width: 220px;}
+.liveimg { width: 195px; height: 100px; margin-left: 10px;}
+.livepreview h3 { font: 16px "consolas"; color: #FFF; text-align: center;}
+.all-news-a { color: #fff; padding-left: 260px; text-decoration: none;}
+.all-news-a:hover { text-decoration: underline;}

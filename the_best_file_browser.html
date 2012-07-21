@@ -1,0 +1,103 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="inner.css" type="text/css";>
+</head>
+<body>
+<div id="wrapper">
+	<div id="logomenu">
+    	<div class="logo">
+        	<img class="logoimage" src="images/logo.png"/>
+        </div>
+        <div class="clear"></div>
+        <div class="menu">
+            <div id="menu">
+                <h2>About</h2>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="usermanual.html">User manual</a></li>
+                    <li><a href="http://groups.google.com/group/mksv3">Support group</a></li>
+                    <li><a href="ircroom.html">IRC room</a></li>
+                </ul>
+                <h2>Bugs</h2>
+                <ul>
+                    <li><a href="fork">Fork and fix</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/issues">Fill issue</a></li>
+                    <li><a href="mailto:mksv3-bugs@googlegroups.com">Email issue</a></li>
+                </ul>
+                
+                <h2>Hacking</h2>
+                <ul>
+                    <li><a href="https://github.com/hlamer/mksv3">GitHub</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/wiki/Plugins-tutorial">Plugin Tutorial</a></li>
+                    <li><a href="http://mksv3.rtfd.org">Plugin API</a></li>
+                </ul>
+                
+                <a href="https://sourceforge.net/donate/index.php?group_id=163493" target="_blank"> <img src="https://images-ssl.sourceforge.net/images/project-support.jpg"/></a>
+                <br/>
+                <br/>            
+            </div>        
+        </div>
+    </div>
+    <div id="headercontent">
+    	<div class="header">
+        	<div class="enki">
+            	<div class="enkilogo">
+            </div>
+            <div class="clear"> </div>
+            <div class="editor">
+            	<div class="freespace">
+                	<h3>Install from sources</h3>
+                </div>
+            	<div class="slogo">
+                    <h2>editor</h2><br/>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="content">
+        	<div class="innercontent">
+    		<h2>Locator</h2>
+				<p>Some time ago I noticed, that I dislike our File Browser ui. It takes too lot of free space, and there are too lot of buttons, but I never use them. I decided to improve the UI…<br/>
+Here is old version:</p>
+				<img class="innercontentimg2" src="images/old-file-browser.png"/>
+
+            <h3>Useless functionality</h3>
+            <p>At first, I just removed 2 of the buttons.</p>
+            <p>Why do we need "Select a root folder", if it only opens file dialogue, similar to main UI? I think, we don't need it. Removed</p>
+            <p>Do we need Set selected item as root button? If I am browsing with a mouse, I don't select item, than click the button, I just doubleclick the item. If I am browsing with keyboard, I also don't click the button, I press enter on the item. Removed</p>
+            <p>Do you use bookmarks in the current File Browser version? This functionality intended to help us quickly open popular directories, but I'm to lazy for keeping directories list up to date, therefore, don't use bookmarks. Functionality does not serve its goal. Useless. Removed</p>
+            <p>OK, it seems I removed all, now UI contains only 1 button (Up), one read only edit box and the tree. As simple, as possible. Now about useful functionality…</p>
+            <h3>OK, it seems I removed all, now UI contains only 1 button (Up), one read only edit box and the tree. As simple, as possible. Now about useful functionality…</h3>
+            <p>Let's look at popular web browsers. It is kind of software, which actively used at most every PC user. Really big user base, and valuable experience.</p>
+            <p>How do you open your pages? I think:</p>
+            <ul>
+            	<li><span>Type a address</span></li>
+            	<li><span>Click a link</span></li>
+            	<li><span>Start to type a address, and browser completes it for you, according to your history</span></li>
+                <li><span>Press Back and Forward</span></li
+            ></ul>
+            <p>I think, all 4 variants are suitable for a text editor File Browser as well. So, my changes are:</h4></p>
+            <ul>
+            	<li><span>Now edit line are editable, and it completes your path with file system completer.</span></li>
+                <li><span>Already was done. Doubleclick a directory to open it, or press Enter</span></li>
+                <li><span>This is replacement of old bookmarks. Now File Browser remembers your history and allows you select your most popular directories (not the last ones, but the most popular!) in the combo</span></li>
+                <li><span>Now Back directory is available as combo item. Some other editors allow you to go back to your previous directory, but, I think, it is useless, you always can press "Up" or select visible directory in the tree. Our file browser allows you to jump back to previous directory, where file has been opened. I think, it is more useful.</span></li>
+                <li><span>jump to directory of current file. Now it is also available as a combo item.</span></li>
+            </ul>
+
+            <p>I'm also thinking about adding web browser like Back and Forward buttons to the dock title, and, probably, Go to directory of current file button, so, combo will contain only popular dirrectories.<br/>
+
+So, I think, here is the best text editor File Browser:</p>
+                       
+                <img class="innercontentimg2" src="images/new-file-browser-2.png"/><img src="images/new-file-browser.png">
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

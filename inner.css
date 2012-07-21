@@ -1,0 +1,69 @@
+/* CSS Document */
+body { margin: 0; padding: 0; font: 14px sans-serif;}
+#wrapper { margin: 0; padding: 0; width: 1000px; height: auto; margin: 0 auto;}
+#logomenu { float:left; width:178px; height:auto;}
+#headercontent { float:left; width:810px; height:auto;}
+.menu { height: 300px; width: 178px; }
+.menu h2 { font: bold 18px Tahoma, Geneva, sans-serif; color: #2E4869; margin:0; padding: 0;}
+.clear { clear: both;}
+.menu ul { margin: 5px 0 7px 15px; padding: 0; color:#F25A29 !important;}
+.menu ul li { color: #2E4869; list-style-image:url(images/li_circle.png); font: 16px sans-serif;}
+.menu ul li a { color: #2E4869; text-decoration: none; font: 16px sans-serif;}
+
+.logo { background:url(images/logotopbf.png) no-repeat right top  ; width: 178px; height:232px;}
+.logoimage { margin: 10px 0 0 -10px;}
+.header { width: 100%; height: auto; margin: 0; padding:0;}
+
+.enki {height: 104px; background:url(images/enkibackground.png) repeat-x; width: 100%;}
+.enkilogo { float:right; height:103px; width: 160px; background:url(images/enkibg.png); margin:0 ; padding: 0;}
+.editor { width: 100%;}
+.freespace { float:left; width: 613px; height: 50px;}
+.freespace h3 { font: 25px tahoma; color:#2E4869; margin:0; padding: 15px 0 0 46px;}
+.slogo { float: left; width: 195px; text-align: right;}
+.editor h2 {font: bold 25px arial; letter-spacing: 16; color: #2E4869; margin: 0 -16px 0 0; padding: 0;}
+.content { width: 100%; height: auto; background:#2E4869; position: relative; left: -11px; margin-bottom: 15px; min-height: 475px; line-height:1.5; letter-spacing: 1px; }
+.innercontent { width: 85%; height: auto; background:#2E4869; margin: 0 auto; padding: 25px 0 25px 20px;}
+.innercontentimg { height: 500px; width: 100%;}
+.innercontentimg1 { height: auto; width: 100%;}
+.innercontentimg2 { height: auto; width: 50%;}
+.content h2 { font: 20px tahoma; color: #fff;}
+.content h3 {  font: 16px tahoma; color: #fff;}
+.content h4 {font: 11px verdana; color: #fff; letter-spacing: 2px; }
+.content ul { padding:0; margin-left: 28px; line-height: 1.5; }
+.content ul li { color: #F1613C; margin:5px 0 0 29x;}
+.content ul li span { margin:5px 0 0 0; padding: 0; list-style-type: none; color: #fff; font:12px verdana; }
+.content ul li a { margin:0; padding: 0; color: #fff; text-decoration: none;}
+.content p {  padding:0; color: #fff;}
+.specialh4 {font: 11px verdana; color: #fff; letter-spacing: 2px; margin-top: 40px;}
+.specialh3 { margin-top: 40px; font: 16px tahoma; color: #fff;}
+.table_of_content { width: 200px; height: auto; border-collapse: collapse; border-spacing: 0;border: 1px solid #CCCCCC; padding: 6px 13px; background:#F8F8F8; color: #333333;}
+.table_of_content h5 { font: 25px sans-serif; color:#333 !important; margin: 0; padding: 0;}
+.table_of_content ul {}
+.table_of_content ul li span{ color: #333;}
+.table_of_content ul li a {}
+.file_browser_table { width: 100%; height: auto;border-collapse: collapse; border-spacing: 0;border: 1px solid #CCCCCC; padding: 6px 13px; background:#F8F8F8; font: 15px sans-serif; color: #333333;}
+.file_browser_table  tr { border: 1px solid #CCCCCC; padding: 6px 13px;}
+.file_browser_table  tr td { border: 1px solid #CCCCCC; padding: 6px 13px;}
+.line_manipulations { width: 40%; height: auto;border-collapse: collapse; border-spacing: 0;border: 1px solid #CCCCCC; padding: 6px 13px; background:#F8F8F8; font: 15px sans-serif; color: #333333;}
+.line_manipulations tr {border: 1px solid #CCCCCC; padding: 6px 13px}
+.line_manipulations tr td { border: 1px solid #CCCCCC; padding: 6px 13px;}
+.advance_replacement { width: 100%; height: auto; background: #F8F8F8;border: 1px solid #CCCCCC;border-radius: 3px 3px 3px 3px;font-size: 13px;line-height: 19px;overflow: auto; padding: 6px 10px;}
+.advance_replacement p{ color: #333333; font: 13px consolas; margin: 15px 0;}
+.pic-table {text-align: center;border-collapse: collapse; color: #333;border-spacing: 0;	}
+.pic-table tr { background-color: #f8f8f8;border-top: 1px solid #CCCCCC;}
+.pic-table tr td {	border-collapse: collapse; color: #333;  margin: 5px; border-spacing: 0;}
+.pic-table tr td a { color: #4183C4;text-decoration: none;}
+.pic-table img { margin: 5px 5px 10px 5px; border: 1px solid #333;}
+/*team*/
+.info { float: left; width: 60%; height: auto; margin: 5px; padding: 5px; }
+.teamimage { float: left; width: 30%; height: auto; margin: 5px; padding: 5px;}
+/*newsupdates form index*/
+.newsupdates { width:350px; height: auto; margin: 5px 0 0 15px; color: #fff;}
+.newsupdates a { color: #fff;}
+.newsupdates h3 { padding: 18px 0 0 14px; color: #fff; font: bold 18px tahoma; margin: 0; }
+.newsupdates p { margin: 0 0 5px 5px; font: 12px arial;}
+.date { width:30%; height:auto;  margin: 5px 0 0 5px; padding: 5px 0 0 5px;} 
+.news {width:62%; height:auto;  margin: 5px 0 0 5px; padding: 5px 0 0 5px;}
+
+.date, .news {float: left;}
+
