@@ -1,4 +1,6 @@
 /* CSS Document */
+a { color: #fff;}
+img { border: none;}
 body { margin: 0; padding: 0; font: 14px sans-serif;}
 #wrapper { margin: 0; padding: 0; width: 1000px; height: auto; margin: 0 auto;}
 #logomenu { float:left; width:178px; height:auto;}
@@ -20,8 +22,8 @@ body { margin: 0; padding: 0; font: 14px sans-serif;}
 .freespace { float:left; width: 613px; height: 50px;}
 .freespace h3 { font: 25px tahoma; color:#2E4869; margin:0; padding: 15px 0 0 46px;}
 .slogo { float: left; width: 195px; text-align: right;}
-.editor h2 {font: bold 25px arial; letter-spacing: 16; color: #2E4869; margin: 0 -16px 0 0; padding: 0;}
-.content { width: 100%; height: auto; background:#2E4869; position: relative; left: -11px; margin-bottom: 15px; min-height: 475px; line-height:1.5; letter-spacing: 1px; }
+.editor h2 {font: bold 25px arial; letter-spacing: 16px; color: #2E4869; margin: 0 -16px 0 0; padding: 0;}
+.content { width: 101%; height: auto; background:#2E4869; position: relative; left: -11px; margin-bottom: 15px; min-height: 475px; line-height:1.5; letter-spacing: 1px; }
 .innercontent { width: 85%; height: auto; background:#2E4869; margin: 0 auto; padding: 25px 0 25px 20px;}
 .innercontentimg { height: 500px; width: 100%;}
 .innercontentimg1 { height: auto; width: 100%;}
@@ -47,7 +49,7 @@ body { margin: 0; padding: 0; font: 14px sans-serif;}
 .line_manipulations { width: 40%; height: auto;border-collapse: collapse; border-spacing: 0;border: 1px solid #CCCCCC; padding: 6px 13px; background:#F8F8F8; font: 15px sans-serif; color: #333333;}
 .line_manipulations tr {border: 1px solid #CCCCCC; padding: 6px 13px}
 .line_manipulations tr td { border: 1px solid #CCCCCC; padding: 6px 13px;}
-.advance_replacement { width: 100%; height: auto; background: #F8F8F8;border: 1px solid #CCCCCC;border-radius: 3px 3px 3px 3px;font-size: 13px;line-height: 19px;overflow: auto; padding: 6px 10px;}
+.advance_replacement {height: auto; background: #F8F8F8;border: 1px solid #CCCCCC;border-radius: 3px 3px 3px 3px;font-size: 13px;line-height: 19px;overflow: auto; padding: 6px 10px;}
 .advance_replacement p{ color: #333333; font: 13px consolas; margin: 15px 0;}
 .pic-table {text-align: center;border-collapse: collapse; color: #333;border-spacing: 0;	}
 .pic-table tr { background-color: #f8f8f8;border-top: 1px solid #CCCCCC;}
@@ -56,6 +58,8 @@ body { margin: 0; padding: 0; font: 14px sans-serif;}
 .pic-table img { margin: 5px 5px 10px 5px; border: 1px solid #333;}
 /*team*/
 .info { float: left; width: 60%; height: auto; margin: 5px; padding: 5px; }
+.info h2 { color: #333;}
+.info h3 { color: #333;}
 .teamimage { float: left; width: 30%; height: auto; margin: 5px; padding: 5px;}
 /*newsupdates form index*/
 .newsupdates { width:350px; height: auto; margin: 5px 0 0 15px; color: #fff;}
@@ -66,4 +70,28 @@ body { margin: 0; padding: 0; font: 14px sans-serif;}
 .news {width:62%; height:auto;  margin: 5px 0 0 5px; padding: 5px 0 0 5px;}
 
 .date, .news {float: left;}
-
+/*plugin tutorial*/
+.highlight { 
+background-color: #F8F8F8;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+	margin-left: -150px;
+}
+highlight pre { margin-left: -30px;}	
+marginleft { margin_left: 30px;}
+.kn { font-weight: bold; color: #333;}
+.nn { color: #555;}
+.n { color: #333;}
+.c { color: #999988;font-style: italic;}
+.k { font-weight: bold;}
+.nc { color: #445588;font-weight: bold;}
+.p {}
+.sd { color: #DD1144;}
+.nf { color: #990000;font-weight: bold;}
+.bp { color: #999999;}
+.o { font-weight: bold;}
+.s { color: #DD1144;} 	 	

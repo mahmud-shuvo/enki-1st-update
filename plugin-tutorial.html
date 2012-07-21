@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="inner.css" type="text/css" />
+<title>Enki</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="logomenu">
+    	<div class="logo">
+        	<img class="logoimage" src="images/logo.png"/>
+        </div>
+        <div class="clear"></div>
+        <div class="menu">
+            <div id="menu">
+                <h2>About</h2>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="usermanual.html">User manual</a></li>
+                    <li><a href="http://groups.google.com/group/mksv3">Support group</a></li>
+                    <li><a href="ircroom.html">IRC room</a></li>
+                </ul>
+                <h2>Bugs</h2>
+                <ul>
+                    <li><a href="fork">Fork and fix</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/issues">Fill issue</a></li>
+                    <li><a href="mailto:mksv3-bugs@googlegroups.com">Email issue</a></li>
+                </ul>
+                
+                <h2>Hacking</h2>
+                <ul>
+                    <li><a href="https://github.com/hlamer/mksv3">GitHub</a></li>
+                    <li><a href="https://github.com/hlamer/mksv3/wiki/Plugins-tutorial">Plugin Tutorial</a></li>
+                    <li><a href="http://mksv3.rtfd.org">Plugin API</a></li>
+                </ul>
+                
+                <a href="https://sourceforge.net/donate/index.php?group_id=163493" target="_blank"> <img src="https://images-ssl.sourceforge.net/images/project-support.jpg"/></a>
+                <br/>
+                <br/>            
+            </div>        
+        </div>
+    </div>
+    <div id="headercontent">
+    	<div class="header">
+        	<div class="enki">
+            	<div class="enkilogo">
+            </div>
+            <div class="clear"> </div>
+            <div class="editor">
+            	<div class="freespace">
+                	<h3>Install from sources</h3>
+                </div>
+            	<div class="slogo">
+                    <h2>editor</h2><br/>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="content">
+        	<div class="innercontent">
+    		<h2>Plugin Tutorial</h2><hr/>
+                <p>This page gives very brief introduction to plugin interface. See plugin API documentation for full information.<br/>
+				<h3>Hello world plugin</h3>
+                <p>Let's create our first plugin. This manual gives step-by-step instructions. Final code may be found at mks/example-plugin/helloworld.py. If you want to test it quicly, just copy this file to mks/plugins/ and restart MkS.</p>
+                <h3>The beginning</h3>
+                    <p>For creating "Hello, world" plugin, go to mksv3 sources directory, and create file mks/plugins/helloworld.py with the next code: <br/>
+                <div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="kn">from</span> <span class="nn">PyQt4.QtGui</span> <span class="kn">import</span> <span class="n">QMessageBox</span></span>
+                    
+                    <span class="c"># core is main mks.core singletone. It is usually used for getting pointers to other singletones</span>
+                    <span class="kn">from</span> <span class="nn">mks.core.core</span> <span class="kn">import</span> <span class="n">core</span>
+                    
+                    <span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span>
+                        <span class="sd">"""During initialization, core imports all modules and packages in mks/plugins directory,</span>
+                    <span class="sd">    searches for Plugin class in every module and creates an instance</span>
+                    <span class="sd">    """</span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">information</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">mainWindow</span><span class="p">(),</span> <span class="s">"Hello, world"</span><span class="p">,</span> <span class="s">"Plugin loaded"</span><span class="p">)</span>
+                        
+                        <span class="k">def</span> <span class="nf">del_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""This method is called by core for each plugin during termination</span>
+                    <span class="sd">        """</span>
+                            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">information</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">mainWindow</span><span class="p">(),</span> <span class="s">"Hello, world"</span><span class="p">,</span> <span class="s">"Plugin terminated"</span><span class="p">)</span>
+                    </pre>
+                    </div>
+                </div>
+                <p>Now restart MkS and see, that your plugin is loaded </p>
+                <h3>Add new action to the main menu</h3>
+                <div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span></span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_addAction</span><span class="p">()</span>
+                    
+                        <span class="k">def</span> <span class="nf">_addAction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""Add action to main menu</span>
+                    <span class="sd">        This action uses embedded icons. You can find list of icons in icons/ directory at project root</span>
+                    <span class="sd">        """</span>
+                            <span class="n">action</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">actionManager</span><span class="p">()</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span> <span class="s">"mHelp/aSayHello"</span><span class="p">,</span>
+                                                                     <span class="s">"Say Hello..."</span><span class="p">,</span>
+                                                                     <span class="n">QIcon</span><span class="p">(</span><span class="s">':mksicons/monkey.png'</span><span class="p">))</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">actionManager</span><span class="p">()</span><span class="o">.</span><span class="n">setDefaultShortcut</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="s">"Ctrl+Alt+Shift+H"</span><span class="p">)</span>
+                            <span class="n">action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sayHello</span><span class="p">)</span>
+                            
+                        <span class="k">def</span> <span class="nf">_sayHello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""Handler for main menu action</span>
+                    <span class="sd">        """</span>
+                            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">information</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">mainWindow</span><span class="p">(),</span> <span class="s">"Hello, world"</span><span class="p">,</span> <span class="s">"Menu action has been triggered!"</span><span class="p">)</span>
+                    </pre>
+                    </div>
+                </div> 
+                <p>Don't forget to add import QIcon at the top of file.<br/>
+Now run MkS and check, if you have action in Help menu. You even might go to Settings->Application shortcuts and set new shortcut for it.               <h3>Add dock widget to the main window</h3>
+				<div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="kn">import</span> <span class="nn">mks.widgets.dockwidget</span></span>
+                    
+                    <span class="k">class</span> <span class="nc">MyDock</span><span class="p">(</span><span class="n">mks</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">dockwidget</span><span class="o">.</span><span class="n">DockWidget</span><span class="p">):</span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="n">mks</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">dockwidget</span><span class="o">.</span><span class="n">DockWidget</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s">"This is Hello World dock"</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">setWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s">"Hello dock"</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s">"Hello dock"</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s">":mksicons/help.png"</span><span class="p">))</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">showAction</span><span class="p">()</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s">"Alt+H"</span><span class="p">)</span>
+                    
+                    <span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_createDock</span><span class="p">()</span>
+                    
+                        <span class="k">def</span> <span class="nf">_createDock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""Create dock widget and add it to main window</span>
+                    <span class="sd">        """</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_dock</span> <span class="o">=</span> <span class="n">MyDock</span><span class="p">()</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">mainWindow</span><span class="p">()</span><span class="o">.</span><span class="n">addDockWidget</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">RightDockWidgetArea</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dock</span><span class="p">)</span>
+                    </pre>
+                    </div>                
+                </div>
+                <h3>Read and write settings from the config</h3>
+                <div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span></span>s
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_readSettings</span><span class="p">()</span>
+                    
+                        <span class="k">def</span> <span class="nf">_readSettings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""Read settings from core configuration file</span>
+                    <span class="sd">        """</span>
+                            <span class="k">if</span> <span class="ow">not</span> <span class="s">"HelloWorld"</span> <span class="ow">in</span> <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">():</span>  <span class="c"># first start</span>
+                                <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()[</span><span class="s">"HelloWorld"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                                <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()[</span><span class="s">"HelloWorld"</span><span class="p">][</span><span class="s">"VeryImportantSetting"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"the correct value"</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_dock</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s">'Option value: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()[</span><span class="s">"HelloWorld"</span><span class="p">][</span><span class="s">"VeryImportantSetting"</span><span class="p">])</span>
+                    
+                        <span class="k">def</span> <span class="nf">_writeSettings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""This method is never called.</span>
+                    <span class="sd">        Just an example implementation</span>
+                    <span class="sd">        """</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()[</span><span class="s">"HelloWorld"</span><span class="p">][</span><span class="s">"VeryImportantSetting"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"new value"</span>
+                            <span class="c"># Don't forget to flush config!</span>
+                            <span class="c"># if settings has been edited with main settings dialogue, it will be flushed automatically</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+                    </pre>
+                    </div>                
+                </div>
+                <p>Here we dynamically add our option to the main configuration file during first start. You also can edit mks/config/mksv3.default.json</p>
+                <h3>Get notified, when something intersting happens</h3>
+                <div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span></span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">workspace</span><span class="p">()</span><span class="o">.</span><span class="n">currentDocumentChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_onDocumentChanged</span><span class="p">)</span>
+                    
+                        <span class="k">def</span> <span class="nf">_onDocumentChanged</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+                            <span class="sd">"""Current document has been changed. Let's notify the user</span>
+                    <span class="sd">        """</span>
+                            <span class="k">if</span> <span class="n">new</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                                <span class="n">core</span><span class="o">.</span><span class="n">mainWindow</span><span class="p">()</span><span class="o">.</span><span class="n">appendMessage</span><span class="p">(</span><span class="s">"Current file is '</span><span class="si">%s</span><span class="s">'"</span> <span class="o">%</span> <span class="n">new</span><span class="o">.</span><span class="n">fileName</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">)</span>
+                    </pre>
+                    </div>                
+                </div>
+                <p>Check the API docs for other useful signals </p>
+                <h3>Add my options to the settings dialogue</h3>
+                <div class="advance_replacement">
+                    <div class="highlight">
+                    <pre>
+                    <span class="marginleft"><span class="kn">from</span> <span class="nn">mks.core.uisettings</span> <span class="kn">import</span> <span class="n">TextOption</span></span>
+                    
+                    <span class="k">class</span> <span class="nc">SettingsPage</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+                        <span class="sd">"""Settings page for Hello World plugin</span>
+                    <span class="sd">    """</span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+                            <span class="n">QWidget</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s">"Very important option"</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">edit</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="p">)</span>
+                    
+                    <span class="k">class</span> <span class="nc">Plugin</span><span class="p">:</span>
+                        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">uiSettingsManager</span><span class="p">()</span><span class="o">.</span><span class="n">dialogAccepted</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_applySettings</span><span class="p">)</span>
+                            <span class="n">core</span><span class="o">.</span><span class="n">uiSettingsManager</span><span class="p">()</span><span class="o">.</span><span class="n">aboutToExecute</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_onSettingsDialogAboutToExecute</span><span class="p">)</span>
+                    
+                        <span class="k">def</span> <span class="nf">_applySettings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                            <span class="sd">"""Dialog has been accepted. Apply settings</span>
+                    <span class="sd">        """</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_dock</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s">'Option value: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">()[</span><span class="s">"HelloWorld"</span><span class="p">][</span><span class="s">"VeryImportantOption"</span><span class="p">])</span>
+                        
+                        <span class="k">def</span> <span class="nf">_onSettingsDialogAboutToExecute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dialog</span><span class="p">):</span>
+                            <span class="sd">"""UI settings dialogue is about to execute.</span>
+                    <span class="sd">        Add own options</span>
+                    <span class="sd">        """</span>
+                            <span class="n">page</span> <span class="o">=</span> <span class="n">SettingsPage</span><span class="p">(</span><span class="n">dialog</span><span class="p">)</span>
+                            <span class="n">dialog</span><span class="o">.</span><span class="n">appendPage</span><span class="p">(</span><span class="s">u"Hello World"</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">QIcon</span><span class="p">(</span><span class="s">':/mksicons/help.png'</span><span class="p">))</span>
+                    
+                            <span class="c"># Options</span>
+                            <span class="n">dialog</span><span class="o">.</span><span class="n">appendOption</span><span class="p">(</span><span class="n">TextOption</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="p">(),</span> <span class="s">"HelloWorld/VeryImportantOption"</span><span class="p">,</span> <span class="n">page</span><span class="o">.</span><span class="n">edit</span><span class="p">))</span>
+                    </pre>
+                    </div>
+                
+                </div>
+                                  <p>Now go to <em>Edit-&gt;Settings-&gt;Hello World</em>, edit the text and check, if it is updated on UI. Than restart MkS and check, if new value has been loaded from settings.<br/>
+
+Congratulations! We just have created absolutelly useless plugin. And you are ready to create something more valuable.
+Full <a href="http://mksv3.rtfd.org">plugin API documentation</a> and MkS team will help you.</p> 
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

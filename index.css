@@ -1,4 +1,5 @@
 /* CSS Document */
+img { border: none;}
 body {margin:0; padding: 0; font: 14px sans-serif;}
 #wrapper {width: 1000px;height: auto;margin: 0 auto;}
 h4  { font: 10px sans-serif; text-align:right; color:#fff; padding-right: 10px;}
@@ -15,7 +16,7 @@ h4  { font: 10px sans-serif; text-align:right; color:#fff; padding-right: 10px;}
 .slogo { width: 195px; text-align: right;}
 .twitter { margin:10px 15px 0 0;}
 .fb {margin: 10px 10px 0 0 ;}
-.editor h2 {font: bold 25px arial; letter-spacing: 16; color: #2E4869; margin: 0 -16px 0 0; padding: 0;}
+.editor h2 {font: bold 25px arial; letter-spacing: 16px; color: #2E4869; margin: 0 -16px 0 0 ; padding: 0;}
 .editorUL, .editorcontent, .slogo { float: left;}
 .editorUL ul { margin: 5px 0 0 30px; padding: 0; }
 .editorUL ul li { color: #2E4869; list-style-image:url(images/li_circle.png); line-height: 18px;}
@@ -38,7 +39,7 @@ h4  { font: 10px sans-serif; text-align:right; color:#fff; padding-right: 10px;}
 .contentmenu ul { margin: 0 5px 0 20px; padding: 0;  }
 .contentmenu ul li { list-style: none; margin-top: 14px; width: 313px;}
 .contentmenu ul li a { text-decoration: none; background:url(images/menubg.png) repeat-x; 
-border-radius: 8px;background-position: right;padding-right: 32px;padding-left: 23px;display: block;line-height: 30px;text-decoration: none;font-family: Georgia, "Times New Roman", Times, serif;font-size: 21px;color: #fff;box-shadow:  0px -2px 5px 1px #000;-webkit-box-shadow:  0px -2px 5px 1px #000; }
+border-radius: 8px; -webkit- border-radius: 8px; -moz-border-radius: 8px; background-position: right;padding-right: 32px;padding-left: 23px;display: block;line-height: 30px;text-decoration: none;font-family: Georgia, "Times New Roman", Times, serif;font-size: 21px;color: #fff;box-shadow:  0px -2px 5px 1px #000;-webkit-box-shadow:  0px -2px 5px 1px #000; }
 .contentmenu ul li a:hover { background:url(images/menubghober.png) repeat-x;  display: block; box-shadow:  0px -2px 5px 1px #000;
 -webkit-box-shadow:  0px -2px 5px 1px #FFF;}
 .menuimg {padding-right: 50px; vertical-align: middle; }
